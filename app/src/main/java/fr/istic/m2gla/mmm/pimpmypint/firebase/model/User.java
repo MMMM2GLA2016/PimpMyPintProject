@@ -1,20 +1,20 @@
-package fr.istic.m2gla.mmm.pimpmypint.firebase.model;
+package gla.istic.pimpmypint.firebase.model;
 
 import java.util.List;
 
 /**
  * Created by Antoine Brezillon on 21/03/16.
  */
-public class user {
+public class User {
 
     private String uid;
     private String name;
-    private List<user> contacts;
+    private List<User> contacts;
 
-    public user() {
+    public User() {
     }
 
-    public user(String uid, String name) {
+    public User(String uid, String name) {
         this.uid = uid;
         this.name = name;
     }
@@ -27,7 +27,7 @@ public class user {
         return name;
     }
 
-    public List<user> getContacts() {
+    public List<User> getContacts() {
         return contacts;
     }
 }
