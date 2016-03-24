@@ -16,6 +16,8 @@ import com.firebase.client.FirebaseError;
 
 import java.util.Map;
 
+import fr.istic.m2gla.mmm.pimpmypint.firebase.model.User;
+
 public class SignUpActivity extends AppCompatActivity {
 
     Firebase mFirebaseRef;
@@ -37,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
         email = (emailTV != null ? emailTV.getText().toString() : null);
 
         TextView passwordTV = (TextView) findViewById(R.id.password_sign_up);
+
         password = (passwordTV != null ? passwordTV.getText().toString() : null);
         if (email != null && password != null)
             mFirebaseRef.createUser(email, password, new ValueResultHandler());
@@ -48,6 +51,14 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         public void onSuccess(Map<String, Object> result) {
             System.out.println("Successfully created user account with uid: " + result.get("uid"));
+
+            AutoCompleteTextView pseudoTV = (AutoCompleteTextView) findViewById(R.id.pseudo_sign_up);
+            String pseudo = (pseudoTV != null ? pseudoTV.getText().toString() : null);
+
+            User user = new User(pseudo);
+
+            Firebase usersRef = mFirebaseRef.child(getResources().getString(R.string.node_users));
+            usersRef.child((String) result.get("uid")).setValue(user);
 
             Intent returnIntent = new Intent();
 

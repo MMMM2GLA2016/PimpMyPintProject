@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="firebase_url">https://pimpmypint.firebaseio.com/users</string>
+    <string name="firebase_url">https://pimpmypint.firebaseio.com</string>
+    <string name="node_users">Users</string>
+    <string name="node_beers">Beers</string>
 </resources>

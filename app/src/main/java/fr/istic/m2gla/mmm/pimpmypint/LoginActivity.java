@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
             startActivity(intent);
         }
+        ((PimpMyPintApplication) getApplication()).setAuthData(authData);
     }
 
     private void showErrorDialog(String message) {

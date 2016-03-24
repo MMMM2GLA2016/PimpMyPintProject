@@ -1,4 +1,4 @@
-package gla.istic.pimpmypint.firebase.model;
+package fr.istic.m2gla.mmm.pimpmypint.firebase.model;
 
 import java.util.List;
 
@@ -7,20 +7,13 @@ import java.util.List;
  */
 public class User {
 
-    private String uid;
     private String name;
     private List<User> contacts;
 
-    public User() {
-    }
+    public User() {}
 
-    public User(String uid, String name) {
-        this.uid = uid;
+    public User(String name) {
         this.name = name;
-    }
-
-    public String getUid() {
-        return uid;
     }
 
     public String getName() {
