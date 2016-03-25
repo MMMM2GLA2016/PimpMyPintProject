@@ -18,18 +18,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme" />
-
         <activity android:name=".TestActivity" />
+        <activity android:name=".SearchBeerActivity" />
+
+        <provider
+            android:name=".BeerListContentProvider"
+            android:authorities="beerlistcontentprovider"
+            android:label="Some beer" />
+
+        <activity android:name=".BeerInfoActivity"></activity>
     </application>
 
 </manifest>

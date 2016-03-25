@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setAuthenticatedUser(AuthData authData) {
         if (authData != null) {
-            Intent intent = new Intent(this, TestActivity.class);
+            Intent intent = new Intent(this, /*TestActivity*/ SearchBeerActivity.class);
             intent.putExtra("email", authData.getProviderData().get("email").toString())
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                             | Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         String password= (passwordTV != null ? passwordTV.getText().toString() : null);
 
         if (email != null && password != null)
-            mFirebaseRef.authWithPassword(email,password,new AuthResultHandler("password"));
+            mFirebaseRef.authWithPassword(email, password, new AuthResultHandler("password"));
         else
             Log.i(TAG, "Error on credentials");
 
